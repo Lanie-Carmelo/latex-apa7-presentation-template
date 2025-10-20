@@ -174,11 +174,11 @@ aspectratio=1610, % 16:10
 
 ### Change Fonts
 
-The template uses Times New Roman by default (matches APA paper template):
+The template uses Times New Roman by default for body text (to match the APA paper template), and Liberation Sans (with Latin Modern Sans as fallback) for slide text:
 
 ```latex
 \setmainfont{Times New Roman}
-\setsansfont{Arial}  % Used for slide text
+\setsansfont{Liberation Sans}  % Used for slide text (fallback: Latin Modern Sans)
 ```
 
 For better readability on screen, consider:
@@ -380,7 +380,7 @@ pac3 output/presentation.pdf
 
 ### Notes Not Showing
 
-Check line 77 in `presentation.tex`:
+Check lines 104 and 107 in `presentation.tex`:
 
 ```latex
 \setbeameroption{show notes}  % Should be active for notes version

@@ -50,8 +50,8 @@ make submissions-presentation
 ### 1. Edit `presentation.tex`
 
 Open the file and customize:
-- Line 87: Title, subtitle, author, institution, date
-- Lines 97-290: Your actual presentation content
+- Lines 111-115: Title, subtitle, author, institution, date
+- Lines 118-354: Your actual presentation content
 - Replace example content with your own
 - Add `\note{}` commands for speaking reminders
 
@@ -179,7 +179,7 @@ Edit line 35 in `presentation.tex`:
 
 ```latex
 \usetheme{default}   % Minimal (current, recommended)
-\usetheme{Madrid}    # With navigation
+\usetheme{Madrid}    % With navigation
 \usetheme{Berlin}    % With outline sidebar
 ```
 
@@ -194,7 +194,7 @@ aspectratio=43,   % 4:3 traditional
 
 ### Show Notes on Second Screen
 
-Edit line 74 (for dual-monitor setup):
+Edit lines 102-108 (for dual-monitor setup):
 
 ```latex
 \setbeameroption{show notes on second screen=right}
