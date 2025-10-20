@@ -50,8 +50,8 @@ make submissions-presentation
 ### 1. Edit `presentation.tex`
 
 Open the file and customize:
-- Lines 111-115: Title, subtitle, author, institution, date
-- Lines 118-354: Your actual presentation content
+- Lines 111–115: Title, subtitle, author, institution, date
+- Lines 118–354: Your actual presentation content
 - Replace example content with your own
 - Add `\note{}` commands for speaking reminders
 
@@ -135,7 +135,7 @@ Uses the same `references.bib` file!
 ## Recommended Workflow
 
 1. **Write outline** - Use `\section{}` and `\subsection{}` first
-2. **Fill content** - Add frames with key points (20-40 words/slide)
+2. **Fill content** - Add frames with key points (20–40 words/slide)
 3. **Add notes** - Write what you'll say in `\note{}` commands
 4. **Build and review** - `make presentation-notes` to see both
 5. **Practice** - Use notes version for rehearsal
@@ -194,7 +194,7 @@ aspectratio=43,   % 4:3 traditional
 
 ### Show Notes on Second Screen
 
-Edit lines 102-108 (for dual-monitor setup):
+Edit lines 102–108 (for dual-monitor setup):
 
 ```latex
 \setbeameroption{show notes on second screen=right}
