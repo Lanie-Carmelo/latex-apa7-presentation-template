@@ -1,0 +1,11 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": ["LuaLaTeX", "Beamer", "frametitle", "pgfpages", "biblatex", "biber"],
+  "ignoreRegExpList": [
+    "/\\\\[a-zA-Z]+/",
+    "/%.*$/",
+    "/\\$[^$]*\\$/",
+    "/\\{[^}]*\\}/"
+  ]
+}

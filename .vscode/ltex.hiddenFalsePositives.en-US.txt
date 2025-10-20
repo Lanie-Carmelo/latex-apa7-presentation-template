@@ -1,3 +1,4 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qamerican american-apa\\E$"}
 {"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QChanged\nSplit CI workflow into parallel PDF, HTML, and DOCX jobs\nMade HTML and DOCX builds non-blocking (only PDF is required)\nImproved .gitignore patterns\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QChanged\nSplit CI workflow into parallel PDF, HTML, and DOCX jobs\nMade HTML and DOCX builds non-blocking (only PDF is required)\nImproved .gitignore patterns\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QAdded\nAdded clarification in README.md and PRESENTATION-README.md about how screen readers announce en dashes and em dashes (as \"en dash\"/\"em dash\", not as semantic interpretations like \"through\")\nExplained that en dash usage is for APA 7 compliance and typography, not accessibility enhancement\\E$"}
