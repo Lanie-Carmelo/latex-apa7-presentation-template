@@ -2,62 +2,47 @@
 
 All notable changes to this project will be documented in this file.
 
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
 ## [Unreleased]
-
-## [1.2.0] - 2025-10-20
-
-### Added
-- Version tracking in main.tex header with repository URL and attribution guidelines
-- CITATION.cff file for machine-readable citation metadata
-- VERSION file for easy version tracking
-- Citation and attribution section in README with BibTeX example
-- Guidance for derivative works and template attribution
-- Pre-commit hooks for automated LaTeX linting and quality checks
-- Automatic release workflow triggered by version tags
-- CODEOWNERS file to automate code review assignments and clarify ownership of repository files for contributors
-- Comprehensive Copilot instructions file for improved coding agent efficiency
-
-### Changed
-- Split CI workflow into parallel PDF, HTML, and DOCX jobs
-- Made HTML and DOCX builds non-blocking (only PDF is required)
-- Improved .gitignore patterns
-
-## [1.1.1] - 2025-10-20
-
-### Fixed
-- GitHub Actions CI build font installation
-  - Fixed Times New Roman font installation in CI environment
-  - Added automatic EULA acceptance for msttcorefonts installer
-  - Improved font cache update with verbose logging
-  - Added font verification step to catch installation issues
-
-## [1.1.0] - 2025-10-20
-
-### Added
-- Support for DOCX output via Pandoc
-- Enhanced PDF/UA accessibility compliance checks
-- Additional citation examples in `main.tex`
-- Improved build scripts for multi-format output
-- Expanded documentation for contributors
 
 ## [1.0.0] - 2025-10-20
 
 ### Added
+- Initial release of accessible Beamer presentation template
+- `presentation.tex` main presentation file with:
+  - Semantic structure using sections, frames, and itemize
+  - Comprehensive presenter notes using `\note{}` command
+  - APA-style citations with biblatex/biber integration
+  - PDF/UA tagged output for screen reader accessibility
+  - Sample slides demonstrating best practices
+- `presentation-notes.tex` wrapper for displaying notes below slides
+- `presentation-handout.tex` wrapper for 4-slides-per-page handout format
+- Makefile targets for presentation builds:
+  - `make presentation` for standard slides
+  - `make presentation-notes` for slides with notes
+  - `make presentation-handout` for handout format
+  - `make view-presentation` to open presentation
+  - `make submissions-presentation` for timestamped archival
+- `PRESENTATION-README.md` comprehensive documentation (30+ pages)
+- `QUICKSTART-PRESENTATION.md` quick reference guide
+- Accessibility features:
+  - Color-independent design (no color-only cues)
+  - High contrast default theme
+  - Simple navigation without decorative symbols
+  - Tagged PDF/UA output for screen readers
+  - Semantic markup throughout
 
-- Initial public release
-- Sample `main.tex` with placeholder metadata, citation examples, and PDF/UA tagging
-- Sample `references.bib` with book and journal entries, including DOI and ISBN metadata
-- `Makefile` with targets for PDF (LaTeX and Pandoc), HTML, DOCX, linting, viewing, archiving, and submissions
-- Lua filter for Pandoc to add accessible reference headings
-- APA 7 citation style file (`apa.csl`) for Pandoc
-- LuaLaTeX support with Times New Roman font
-- Accessibility features (PDF/UA-1 compliance)
-- Multiple output formats (PDF, HTML, DOCX)
-- MIT License
-- CONTRIBUTING.md with contribution guidelines
+### Changed
+- Updated Makefile to include presentation build targets alongside paper targets
+- Extended paper template (v1.2.0) to support presentation creation
+- Bibliography (`references.bib`) now shared between paper and presentation templates
 
-[Unreleased]: https://github.com/lanie-carmelo/apa-7-student-paper-template/compare/v1.2.0...HEAD
-[1.2.0]: https://github.com/lanie-carmelo/apa-7-student-paper-template/compare/v1.1.1...v1.2.0
-[1.1.1]: https://github.com/lanie-carmelo/apa-7-student-paper-template/compare/v1.1.0...v1.1.1
-[1.1.0]: https://github.com/lanie-carmelo/apa-7-student-paper-template/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/lanie-carmelo/apa-7-student-paper-template/releases/tag/v1.0.0
+### Notes
+- This release builds upon the APA 7 Student Paper Template v1.2.0
+- Presentation template maintains same accessibility standards as paper template
+- Both templates can coexist in same repository with shared bibliography
+
+[Unreleased]: https://github.com/Lanie-Carmelo/latex-apa7-presentation-template/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/Lanie-Carmelo/latex-apa7-presentation-template/releases/tag/v1.0.0

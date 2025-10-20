@@ -1,4 +1,4 @@
-# APA 7 Student Paper LaTeX Template
+# Accessible APA 7 Beamer Presentation Template
 
 **Maintained by Lanie Molinar Carmelo**
 
@@ -7,46 +7,46 @@
 - 💼 [LinkedIn](https://www.linkedin.com/in/laniecarmelo/)
 - 🧑‍💻 [GitHub Profile](https://github.com/lanie-carmelo)
 
-Built for blind and sighted students alike, this template emphasizes accessibility, automation, and academic integrity in APA 7 academic writing.
+Built for blind and sighted students alike, this template provides an accessible LaTeX Beamer framework for creating APA 7-compliant academic presentations with comprehensive screen reader support.
 
-This repository provides a ready-to-use template for APA 7th edition student
-papers, written in LaTeX. It emphasizes accessibility, automation, and academic
-integrity. This template uses the biblatex package with the biber backend (not
-BibTeX). It includes:
+This repository provides a ready-to-use template for creating accessible academic presentations using LaTeX Beamer with APA 7th edition citation style. It emphasizes accessibility through semantic structure, presenter notes, and PDF/UA compliance. This template uses biblatex with the biber backend (not BibTeX). It includes:
 
-- `main.tex`: Starter document using manual APA formatting, PDF/UA metadata, and Biber for bibliography processing.
-- `apa.csl`: Citation Style Language file for APA 7th edition (used by Pandoc).
-- `Makefile`: Build system for PDF, HTML, DOCX, linting, viewing, and archiving.
-- `.gitignore`: Ignores LaTeX build artifacts and editor backups.
-- `LICENSE`: MIT License.
+- `presentation.tex`: Main Beamer presentation with semantic structure, presenter notes, and PDF/UA tagging
+- `presentation-notes.tex`: Wrapper for building presentation with notes visible below slides
+- `presentation-handout.tex`: Wrapper for building 4-slides-per-page handout format
+- `apa.csl`: Citation Style Language file for APA 7th edition (used by Pandoc)
+- `Makefile`: Build system for presentations (standard, notes, handout) and paper formats
+- `references.bib`: Shared bibliography for both presentations and papers
+- `.gitignore`: Ignores LaTeX build artifacts and editor backups
+- `LICENSE`: MIT License
 
 ## Why This Exists
 
-I originally built this for my own coursework as a blind Computer Science
-student. Over time, I expanded it into a reusable, standards-compliant template
-to support accessible academic publishing.
+I originally built this as an extension to my [APA 7 Student Paper Template](https://github.com/Lanie-Carmelo/APA-7-Student-Paper-Template) to support accessible presentation creation for my coursework as a blind Computer Science student. This template prioritizes nonvisual navigation through comprehensive presenter notes and semantic structure.
 
 ## Who This is For
 
-This template is designed for students, researchers, and accessibility advocates
-who want to produce APA-compliant documents using LaTeX—whether working locally
-or in Overleaf.
+This template is designed for students, researchers, and accessibility advocates who want to create APA-compliant presentations using LaTeX Beamer—especially those who:
+- Use screen readers (NVDA, JAWS, Orca) or Braille displays
+- Need accessible presenter notes for nonvisual practice
+- Want semantic structure over visual formatting
+- Require PDF/UA tagged output for accessibility compliance
+- Work locally or in Overleaf
 
 ## Accessibility Tools Used
 
-This template was built with screen readers like NVDA and JAWS using Microsoft Visual
-Studio Code.
+This template was built with screen readers like NVDA and JAWS using Microsoft Visual Studio Code with accessible editing practices.
 
 ## Getting Started
 
-1. **Install LaTeX** (TeX Live, MikTeX, etc.) and Biber.
-2. **Clone this repo** and add your content to `main.tex`.
-3. **Add your references** to `references.bib` (see Using Zotero below).
-4. **Build your document** using the Makefile (see Build Process).
+1. **Install LaTeX** (TeX Live, MikTeX, etc.), Biber, and optionally Pandoc
+2. **Clone this repo** and add your content to `presentation.tex`
+3. **Add your references** to `references.bib` (see Using Zotero below)
+4. **Build your presentation** using the Makefile (see Build Process)
 
 ## Build Process
 
-The provided `Makefile` automates compilation and conversion to multiple formats.
+The provided `Makefile` automates compilation of presentations and papers.
 **Note:** This template uses `biblatex` with the `biber` backend (not BibTeX).
 
 ### Common Targets

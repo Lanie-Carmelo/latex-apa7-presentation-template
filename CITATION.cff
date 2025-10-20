@@ -3,22 +3,26 @@ message: "If you use this template, please cite it as below."
 authors:
   - family-names: "Carmelo"
     given-names: "Lanie Molinar"
-title: "APA 7 Student Paper LaTeX Template"
-version: 1.2.0
+title: "Accessible APA 7 Beamer Presentation Template"
+version: 1.0.0
 date-released: 2025-10-20
-url: "https://github.com/Lanie-Carmelo/APA-7-Student-Paper-Template"
-repository-code: "https://github.com/Lanie-Carmelo/APA-7-Student-Paper-Template"
+url: "https://github.com/Lanie-Carmelo/latex-apa7-presentation-template"
+repository-code: "https://github.com/Lanie-Carmelo/latex-apa7-presentation-template"
 license: MIT
 keywords:
   - LaTeX
+  - Beamer
   - APA
   - accessibility
   - PDF/UA
-  - academic writing
+  - presentations
+  - screen readers
+  - academic presentations
   - template
 abstract: >-
-  An APA 7th edition compliant LaTeX template designed for accessible
-  academic publishing. Built for blind and sighted students, it emphasizes
-  screen reader compatibility, semantic markup, and reproducible builds.
-  Supports multi-format output (PDF, HTML, DOCX) using LuaLaTeX, Biber,
-  and Pandoc with Makefile automation.
+  An accessible LaTeX Beamer template for creating APA-style academic
+  presentations. Built for blind and sighted students, this template emphasizes
+  screen reader compatibility through semantic structure, comprehensive
+  presenter notes, and PDF/UA tagged output. Supports APA-style citations
+  with biblatex/biber and includes multiple output modes (standard, notes,
+  handout). Designed as a companion to the APA 7 Student Paper Template.
