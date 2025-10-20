@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2025-10-20
+
+### Fixed
+- Removed non-functional `\PassOptionsToClass` command from `presentation-handout.tex` that was positioned after document class declaration
+- Removed unused `check` and `refresh` targets from Makefile `.PHONY` declaration
+- Fixed LaTeX comment syntax in `QUICKSTART-PRESENTATION.md` (changed `#` to `%`)
+- Corrected line number references in `QUICKSTART-PRESENTATION.md`:
+  - Title/metadata: Line 87 → Lines 111-115
+  - Content: Lines 97-290 → Lines 118-354
+  - Notes configuration: Line 74 → Lines 102-108
+- Corrected line number reference in `PRESENTATION-README.md` (Line 77 → Lines 104 and 107)
+- Fixed font documentation in `PRESENTATION-README.md` to match actual implementation (Liberation Sans with Latin Modern Sans fallback, not Arial)
+
 ## [1.0.0] - 2025-10-20
 
 ### Added
