@@ -39,7 +39,7 @@ This template was built with screen readers like NVDA and JAWS using Microsoft V
 
 ### Note on Typography and Screen Readers
 
-This template uses en dashes (–) for numeric ranges (e.g., pages 10–15, years 2020–2025) to comply with APA 7th edition style requirements. **Important for screen reader users:** Screen readers (NVDA, JAWS, VoiceOver) announce en dashes as "en dash" and em dashes (—) as "em dash"—they do not interpret them as semantic pauses or words like "through" or "to." The use of en dashes in this template is purely for APA style compliance and visual typography, not for accessibility benefits.
+This template uses en dashes (–) for numeric ranges (e.g., pages 10–15, years 2020–2025) to comply with APA 7th edition style requirements. Important for screen reader users: Screen readers (NVDA, JAWS, VoiceOver) announce en dashes as "en dash" and em dashes (—) as "em dash"—not as semantic words like "through" or meaningful pauses. En dashes are used here for APA compliance and professional typography, not for accessibility benefits.
 
 ## Getting Started
 
