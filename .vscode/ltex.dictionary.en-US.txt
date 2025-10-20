@@ -16,3 +16,7 @@ biblatex
 CODEOWNERS
 gitignore
 msttcorefonts
+CTAN
+Tantau
+biblatex-apa
+Kime

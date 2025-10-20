@@ -7,9 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2025-10-20
+
 ### Added
+- Added `.cspell.json` configuration file for Code Spell Checker with LaTeX-specific regex patterns to ignore LaTeX commands, comments, inline math, and braced content
 - Added clarification in README.md and PRESENTATION-README.md about how screen readers announce en dashes and em dashes (as "en dash"/"em dash", not as semantic interpretations like "through")
 - Explained that en dash usage is for APA 7 compliance and typography, not accessibility enhancement
+
+### Changed
+- Extended LTeX dictionary with technical terms: CTAN, Tantau, biblatex-apa, Kime
+- Suppressed false positive LTeX warnings for CHANGELOG.md word repetitions
 
 ## [1.0.2] - 2025-10-20
 
