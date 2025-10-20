@@ -179,4 +179,4 @@ help:
 	@echo "  help         - Show this help message"
 
 # Phony targets
-.PHONY: all pdf pdf-pandoc html docx presentation presentation-notes presentation-handout clean distclean check view view-presentation refresh lint build submissions submissions-presentation submissions-dir status help watch
+.PHONY: all pdf pdf-pandoc html docx presentation presentation-notes presentation-handout clean distclean view view-presentation lint build submissions submissions-presentation submissions-dir status help watch
