@@ -1,0 +1,354 @@
+% Accessible APA 7 Beamer Presentation Template
+% Author: Lanie Molinar Carmelo
+% Template Version: 1.0.0 (2025-10-20)
+% License: MIT License - https://opensource.org/licenses/MIT
+%
+% ACCESSIBILITY NOTES:
+% - Uses semantic structure (sections, frames) not visual formatting
+% - Presenter notes accessible via \note command
+% - Color-independent design (no color-only cues)
+% - Screen reader compatible with tagged PDF
+%
+% Usage: Fill in metadata, write content, and build with 'make presentation'
+% NOTE: This template uses biblatex with the biber backend.
+%       Compile with LuaLaTeX for best results and font support.
+
+\DocumentMetadata{
+  lang=en-US,
+  pdfversion=1.7,
+  pdfstandard=ua-1,
+  testphase={phase-III}
+}
+
+\documentclass[
+  12pt,
+  aspectratio=169,  % 16:9 widescreen (use 43 for 4:3)
+  t,                % Top-align content (change to 'c' for center)
+  ignorenonframetext % Ignore text outside frames for article mode
+]{beamer}
+
+% ===== THEME AND APPEARANCE =====
+% Use a simple, accessible theme with clear structure
+\usetheme{default}
+\usecolortheme{default}
+
+% Remove navigation symbols (not useful for screen readers)
+\setbeamertemplate{navigation symbols}{}
+
+% Use simple footline with page numbers
+\setbeamertemplate{footline}[frame number]
+
+% Simple itemize/enumerate (semantic, not decorative)
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+
+% Clear block structure
+\setbeamertemplate{blocks}[default]
+
+% ===== FONTS =====
+% For maximum compatibility, use system fonts that are typically available
+% Times New Roman for text (matches APA paper template)
+% Liberation Sans (open-source Arial alternative) for slides
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+% Use Liberation Sans if available, fallback to Latin Modern Sans
+\IfFontExistsTF{Liberation Sans}{
+  \setsansfont{Liberation Sans}
+}{
+  \setsansfont{Latin Modern Sans}  % Fallback for Beamer slide text
+}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+% Keep fonts readable
+\setbeamerfont{title}{size=\Large,series=\bfseries}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\normalsize}
+
+% ===== LANGUAGE AND CITATIONS =====
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=apa,backend=biber,sortcites=true,sorting=nyt]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{references.bib}
+
+% ===== ACCESSIBILITY AND METADATA =====
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={Presentation Title},
+  pdfauthor={Lanie Molinar},
+  pdfsubject={Academic Presentation},
+  pdfkeywords={APA, Beamer, Accessibility, Presentation},
+  pdflang={en-US},
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  bookmarksnumbered=true,
+  pdfstartview=Fit
+}
+
+% ===== NOTES AND HANDOUT CONFIGURATION =====
+% Conditional compilation for different output modes
+\ifdefined\handoutmode
+  % Handout mode: 4 slides per page, no overlays
+  \PassOptionsToClass{handout}{beamer}
+  \AtBeginDocument{%
+    \usepackage{pgfpages}
+    \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=5mm]
+  }
+\fi
+
+\ifdefined\withnotes
+  % Notes mode: show notes below slides
+  \setbeameroption{show notes}
+\else
+  % Default: no notes shown
+  \setbeameroption{hide notes}
+\fi
+
+% ===== PRESENTATION METADATA =====
+\title{Your Presentation Title}
+\subtitle{Optional Subtitle}
+\author{Lanie Molinar}
+\institute{Colorado Christian University}
+\date{\today}
+
+% ===== DOCUMENT STRUCTURE =====
+\begin{document}
+
+% ===== TITLE FRAME =====
+\begin{frame}
+  \titlepage
+  \note{
+    Welcome message and opening remarks.
+    Introduce yourself and the topic.
+    Duration: 30 seconds.
+  }
+\end{frame}
+
+% ===== OUTLINE =====
+\begin{frame}{Outline}
+  \tableofcontents
+  \note{
+    Overview of presentation structure.
+    Explain the flow of the talk.
+    Duration: 1 minute.
+  }
+\end{frame}
+
+% ===== SECTION 1: INTRODUCTION =====
+\section{Introduction}
+
+\begin{frame}{Introduction to the Topic}
+  \framesubtitle{Setting the Context}
+  
+  \begin{itemize}
+    \item First key point about the topic
+    \item Second important concept
+    \item Third foundational idea
+  \end{itemize}
+  
+  \note{
+    Explain the background and motivation for this topic.
+    Connect to audience's existing knowledge.
+    Mention why this matters.
+    Duration: 2-3 minutes.
+  }
+\end{frame}
+
+\begin{frame}{Research Question}
+  
+  \begin{block}{Central Question}
+    What is the main research question or problem being addressed?
+  \end{block}
+  
+  \pause
+  
+  \begin{itemize}
+    \item Why this question matters
+    \item Current gaps in knowledge
+    \item Expected contributions
+  \end{itemize}
+  
+  \note{
+    State the research question clearly.
+    Explain its significance.
+    Discuss what makes this question important or timely.
+    Duration: 2 minutes.
+  }
+\end{frame}
+
+% ===== SECTION 2: LITERATURE REVIEW =====
+\section{Literature Review}
+
+\begin{frame}{Previous Research}
+  \framesubtitle{Key Studies in the Field}
+  
+  \begin{itemize}
+    \item \textcite{smith2020} found that faith and reason are complementary
+    \item \textcite{mounce2021} argues for biblical reliability
+    \item \textcite{doe2021} examines theological perspectives
+  \end{itemize}
+  
+  \pause
+  
+  \begin{block}{Research Gap}
+    Despite these contributions, there remains a need for...
+  \end{block}
+  
+  \note{
+    Summarize relevant literature.
+    Highlight key findings and debates.
+    Explain how your work builds on or differs from prior research.
+    Duration: 3 minutes.
+  }
+\end{frame}
+
+% ===== SECTION 3: METHODOLOGY =====
+\section{Methodology}
+
+\begin{frame}{Research Approach}
+  \framesubtitle{Methods and Design}
+  
+  \begin{enumerate}
+    \item Data collection methods
+    \item Analysis procedures
+    \item Validation strategies
+  \end{enumerate}
+  
+  \note{
+    Explain your methodological approach.
+    Justify your choices.
+    Mention any limitations or challenges.
+    Duration: 2-3 minutes.
+  }
+\end{frame}
+
+% ===== SECTION 4: FINDINGS =====
+\section{Findings}
+
+\begin{frame}{Key Results}
+  
+  \begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+      \textbf{Finding 1}
+      \begin{itemize}
+        \item Detail A
+        \item Detail B
+      \end{itemize}
+    \end{column}
+    
+    \begin{column}{0.5\textwidth}
+      \textbf{Finding 2}
+      \begin{itemize}
+        \item Detail C
+        \item Detail D
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  
+  \note{
+    Present main findings.
+    Use clear, accessible language.
+    Connect results to research question.
+    Duration: 3-4 minutes.
+  }
+\end{frame}
+
+\begin{frame}{Interpretation}
+  
+  \begin{block}{What This Means}
+    Interpretation of the findings in context of existing literature
+  \end{block}
+  
+  \begin{itemize}
+    \item Theoretical implications
+    \item Practical applications
+    \item Unexpected outcomes
+  \end{itemize}
+  
+  \note{
+    Analyze and interpret results.
+    Connect to broader themes.
+    Acknowledge limitations.
+    Duration: 2-3 minutes.
+  }
+\end{frame}
+
+% ===== SECTION 5: CONCLUSION =====
+\section{Conclusion}
+
+\begin{frame}{Summary}
+  
+  \textbf{Main Takeaways:}
+  \begin{enumerate}
+    \item First key conclusion
+    \item Second important finding
+    \item Third significant insight
+  \end{enumerate}
+  
+  \vspace{1em}
+  
+  \textbf{Future Directions:}
+  \begin{itemize}
+    \item Next steps for research
+    \item Unanswered questions
+  \end{itemize}
+  
+  \note{
+    Summarize main points.
+    Emphasize contributions.
+    Suggest future research directions.
+    Duration: 2 minutes.
+  }
+\end{frame}
+
+% ===== REFERENCES =====
+\begin{frame}[allowframebreaks]{References}
+  \printbibliography[heading=none]
+  \note{
+    References are available for questions.
+    Point out key sources if asked.
+  }
+\end{frame}
+
+% ===== QUESTIONS =====
+\begin{frame}{Questions?}
+  
+  \begin{center}
+    \Large Thank you for your attention!
+    
+    \vspace{2em}
+    
+    \normalsize
+    Contact: your.email@ccu.edu
+  \end{center}
+  
+  \note{
+    Be ready to answer questions.
+    Have backup slides prepared if needed.
+    Reiterate main message if appropriate.
+  }
+\end{frame}
+
+% ===== APPENDIX (BACKUP SLIDES) =====
+\appendix
+
+\section{Appendix}
+
+\begin{frame}[noframenumbering]{Additional Details}
+  
+  \begin{itemize}
+    \item Supplementary information
+    \item Detailed methodology notes
+    \item Extended data or analysis
+  \end{itemize}
+  
+  \note{
+    Use these slides only if questions arise.
+    Have specific examples ready.
+  }
+\end{frame}
+
+\end{document}

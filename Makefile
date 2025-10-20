@@ -2,7 +2,9 @@
 
 # Variables
 MAIN = main
+PRESENTATION = presentation
 TEXFILE = $(MAIN).tex
+PRESFILE = $(PRESENTATION).tex
 BIBFILE = references.bib
 OUTPUT_DIR = output
 SUBMISSIONS_DIR = submissions
@@ -14,13 +16,37 @@ submissions-dir:
 # Default target
 all: pdf html docx
 
-# PDF target
+# PDF target (paper)
 pdf: | $(OUTPUT_DIR)
 	lualatex -output-directory=$(OUTPUT_DIR) $(TEXFILE)
 	cp $(BIBFILE) $(OUTPUT_DIR)/ 2>/dev/null || true
 	cd $(OUTPUT_DIR) && biber $(MAIN)
 	lualatex -output-directory=$(OUTPUT_DIR) $(TEXFILE)
 	lualatex -output-directory=$(OUTPUT_DIR) $(TEXFILE)
+
+# Presentation target
+presentation: | $(OUTPUT_DIR)
+	lualatex -output-directory=$(OUTPUT_DIR) $(PRESFILE)
+	cp $(BIBFILE) $(OUTPUT_DIR)/ 2>/dev/null || true
+	cd $(OUTPUT_DIR) && biber $(PRESENTATION)
+	lualatex -output-directory=$(OUTPUT_DIR) $(PRESFILE)
+	lualatex -output-directory=$(OUTPUT_DIR) $(PRESFILE)
+
+# Presentation with notes
+presentation-notes: | $(OUTPUT_DIR)
+	lualatex -output-directory=$(OUTPUT_DIR) presentation-notes.tex
+	cp $(BIBFILE) $(OUTPUT_DIR)/ 2>/dev/null || true
+	cd $(OUTPUT_DIR) && biber presentation-notes
+	lualatex -output-directory=$(OUTPUT_DIR) presentation-notes.tex
+	lualatex -output-directory=$(OUTPUT_DIR) presentation-notes.tex
+
+# Presentation handout (4 slides per page)
+presentation-handout: | $(OUTPUT_DIR)
+	lualatex -output-directory=$(OUTPUT_DIR) presentation-handout.tex
+	cp $(BIBFILE) $(OUTPUT_DIR)/ 2>/dev/null || true
+	cd $(OUTPUT_DIR) && biber presentation-handout
+	lualatex -output-directory=$(OUTPUT_DIR) presentation-handout.tex
+	lualatex -output-directory=$(OUTPUT_DIR) presentation-handout.tex
 
 # PDF target using Pandoc
 pdf-pandoc: | $(OUTPUT_DIR)
@@ -69,6 +95,14 @@ view:
 		echo "Error: PDF not found. Run 'make pdf' first."; \
 	fi
 
+# Open presentation PDF
+view-presentation:
+	@if [ -f $(OUTPUT_DIR)/$(PRESENTATION).pdf ]; then \
+		sh -c 'cmd.exe /c start "" "$$(wslpath -w $(OUTPUT_DIR)/$(PRESENTATION).pdf)"'; \
+	else \
+		echo "Error: Presentation PDF not found. Run 'make presentation' first."; \
+	fi
+
 # Lint, build, and view
 build: lint pdf view
 
@@ -90,10 +124,15 @@ lint:
 		grep -Ei "undefined|citation|reference" $(OUTPUT_DIR)/$(MAIN).log || true; \
 	fi
 
-# Submissions target
+# Submissions target (paper)
 submissions: pdf | submissions-dir
 	cp $(OUTPUT_DIR)/$(MAIN).pdf $(SUBMISSIONS_DIR)/$(MAIN)-$(shell date +%Y%m%d-%H%M).pdf
 	@echo "✅ Submission saved to $(SUBMISSIONS_DIR)/$(MAIN)-$(shell date +%Y%m%d-%H%M).pdf"
+
+# Submissions target (presentation)
+submissions-presentation: presentation | submissions-dir
+	cp $(OUTPUT_DIR)/$(PRESENTATION).pdf $(SUBMISSIONS_DIR)/$(PRESENTATION)-$(shell date +%Y%m%d-%H%M).pdf
+	@echo "✅ Presentation saved to $(SUBMISSIONS_DIR)/$(PRESENTATION)-$(shell date +%Y%m%d-%H%M).pdf"
 
 # Clean target - remove intermediate files
 clean:
@@ -113,20 +152,31 @@ $(OUTPUT_DIR):
 # Help target
 help:
 	@echo "Available targets:"
-	@echo "  all          - Build PDF, HTML, and DOCX"
-	@echo "  pdf          - Build PDF using LaTeX"
-	@echo "  pdf-pandoc   - Build PDF using Pandoc"
+	@echo ""
+	@echo "Paper targets:"
+	@echo "  pdf          - Build paper PDF using LaTeX"
+	@echo "  pdf-pandoc   - Build paper PDF using Pandoc"
 	@echo "  html         - Build HTML using Pandoc"
 	@echo "  docx         - Build DOCX using Pandoc"
-	@echo "  build        - Lint, build PDF, and view"
-	@echo "  view         - Open PDF in default viewer"
+	@echo "  view         - Open paper PDF in default viewer"
+	@echo "  submissions  - Copy paper PDF to submissions folder"
+	@echo ""
+	@echo "Presentation targets:"
+	@echo "  presentation         - Build presentation (no notes)"
+	@echo "  presentation-notes   - Build presentation with notes below slides"
+	@echo "  presentation-handout - Build handout version (4 slides per page)"
+	@echo "  view-presentation    - Open presentation PDF"
+	@echo "  submissions-presentation - Copy presentation to submissions folder"
+	@echo ""
+	@echo "Utility targets:"
+	@echo "  all          - Build paper PDF, HTML, and DOCX"
+	@echo "  build        - Lint, build paper PDF, and view"
 	@echo "  watch        - Watch for changes and rebuild"
 	@echo "  lint         - Run LaTeX linter"
-	@echo "  submissions  - Copy PDF to submissions folder with timestamp"
 	@echo "  status       - Show output file information"
 	@echo "  clean        - Remove intermediate files"
 	@echo "  distclean    - Remove all generated files"
 	@echo "  help         - Show this help message"
 
 # Phony targets
-.PHONY: all pdf pdf-pandoc html docx clean distclean check view refresh lint build submissions submissions-dir status help watch
+.PHONY: all pdf pdf-pandoc html docx presentation presentation-notes presentation-handout clean distclean check view view-presentation refresh lint build submissions submissions-presentation submissions-dir status help watch
