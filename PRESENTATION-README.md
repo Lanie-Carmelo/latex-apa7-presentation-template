@@ -205,18 +205,18 @@ Options: `right`, `left`, `top`, `bottom`
 
 - Title slide: 30 seconds
 - Outline: 1 minute
-- Introduction: 3-4 minutes
+- Introduction: 3–4 minutes
 - Literature review: 3 minutes
-- Methodology: 2-3 minutes
-- Findings: 4-5 minutes
+- Methodology: 2–3 minutes
+- Findings: 4–5 minutes
 - Conclusion: 2 minutes
 - Questions: remaining time
 
-**Rule of thumb:** 1-2 minutes per slide maximum.
+**Rule of thumb:** 1–2 minutes per slide maximum.
 
 ### Content Guidelines
 
-- **Keep it simple:** 20-40 words per slide (max 80)
+- **Keep it simple:** 20–40 words per slide (max 80)
 - **Use short phrases:** Not complete sentences
 - **One idea per slide:** Don't overload
 - **Use progressive disclosure:** `\pause` to reveal items one at a time
