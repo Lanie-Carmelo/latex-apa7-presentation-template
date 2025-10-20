@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.2] - 2025-10-20
 
 ### Fixed
-- Updated version numbers in `CITATION.cff` and `presentation.tex` to match v1.0.1 (were incorrectly showing 1.0.0)
+- Updated version numbers in `CITATION.cff` and `presentation.tex` to match v1.0.2 (were incorrectly showing 1.0.0)
 
 ### Changed
 - Reorganized README.md Makefile targets table into three sections: Presentation, Paper, and Utility targets for better clarity
