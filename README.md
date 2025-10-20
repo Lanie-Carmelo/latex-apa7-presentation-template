@@ -49,7 +49,17 @@ This template was built with screen readers like NVDA and JAWS using Microsoft V
 The provided `Makefile` automates compilation of presentations and papers.
 **Note:** This template uses `biblatex` with the `biber` backend (not BibTeX).
 
-### Common Targets
+### Presentation Targets
+
+| Target                   | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| `presentation`           | Builds standard presentation slides (no notes visible).                     |
+| `presentation-notes`     | Builds presentation with notes visible below each slide (for rehearsal).    |
+| `presentation-handout`   | Builds handout version (4 slides per page).                                 |
+| `view-presentation`      | Opens the presentation PDF in your default viewer.                          |
+| `submissions-presentation` | Copies presentation to `submissions/` folder with timestamp.              |
+
+### Paper Targets
 
 | Target        | Description                                                                 |
 |---------------|-----------------------------------------------------------------------------|
@@ -57,13 +67,18 @@ The provided `Makefile` automates compilation of presentations and papers.
 | `pdf-pandoc`  | Generates a PDF using Pandoc (alternative method).                          |
 | `html`        | Converts the LaTeX document to HTML using Pandoc with APA citation styling. |
 | `docx`        | Converts the LaTeX document to DOCX using Pandoc.                           |
+
+### Utility Targets
+
+| Target        | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
 | `lint`        | Runs `chktex` and checks `.log` for missing citations or references.        |
 | `check`       | Displays metadata and integrity info for the compiled PDF.                  |
-| `view`        | Opens the final PDF in your default Windows viewer (e.g., Acrobat).         |
+| `view`        | Opens the paper PDF in your default Windows viewer (e.g., Acrobat).         |
 | `refresh`     | Reopens the PDF to simulate a manual refresh.                               |
 | `build`       | Runs `lint`, compiles the PDF, and opens it—ideal for final review.         |
 | `watch`       | Watches for changes to `.tex` or `.bib` and rebuilds automatically.         |
-| `submissions` | Copies the final PDF to a `submissions/` folder with a timestamp.           |
+| `submissions` | Copies the final paper PDF to a `submissions/` folder with a timestamp.     |
 | `status`      | Lists output file sizes and last modified times.                            |
 | `clean`       | Removes LaTeX build artifacts and the output directory.                     |
 | `distclean`   | Removes all generated files, including outputs and submissions.             |
@@ -84,13 +99,22 @@ All outputs are placed in the `output/` directory. Archived PDFs are stored in `
 
 ### Manual Build Steps
 
-If you are not using the Makefile, compile your document with:
+If you are not using the Makefile, compile your documents with:
 
+**For papers (main.tex):**
 ```sh
 lualatex main.tex
 biber main
 lualatex main.tex
 lualatex main.tex
+```
+
+**For presentations (presentation.tex):**
+```sh
+lualatex presentation.tex
+biber presentation
+lualatex presentation.tex
+lualatex presentation.tex
 ```
 
 **Do not use `bibtex`—this template requires `biber` for bibliography processing.**
