@@ -1,0 +1,39 @@
+repos:
+  # Check for large files and merge conflicts
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-case-conflict
+
+  # LaTeX linting
+  - repo: local
+    hooks:
+      - id: chktex
+        name: LaTeX Linter (chktex)
+        entry: chktex
+        args: ['-q', '-n22', '-n30']
+        language: system
+        files: \.tex$
+        pass_filenames: true
+
+      - id: check-citations
+        name: Check for missing citations
+        entry: bash
+        language: system
+        files: \.tex$
+        pass_filenames: false
+        args:
+          - -c
+          - |
+            if [ -f main.log ]; then
+              if grep -q "Citation.*undefined" main.log; then
+                echo "Error: Found undefined citations in main.log"
+                exit 1
+              fi
+            fi

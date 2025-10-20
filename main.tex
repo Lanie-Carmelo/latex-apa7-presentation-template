@@ -1,0 +1,121 @@
+% filepath: /home/lanie/ccu/apa-7-student-paper-template/main.tex
+% APA 7 Student Paper Template
+% Author: Lanie Molinar Carmelo
+% Repository: https://github.com/Lanie-Carmelo/APA-7-Student-Paper-Template
+% Template Version: 1.2.0 (2025-10-20)
+% License: MIT License - https://opensource.org/licenses/MIT
+%
+% ATTRIBUTION: If you use this template, please consider:
+%   - Citing the repository in your acknowledgments or documentation
+%   - Keeping this header intact to help others find the source
+%   - Checking for updates at the repository URL above
+%
+% Usage: Fill in metadata, write content, and build with 'make pdf'
+% NOTE: This template uses biblatex with the biber backend.
+%       Compile with LuaLaTeX for best results and font support.
+%       If building manually, run:
+%         lualatex main.tex
+%         biber main
+%         lualatex main.tex
+%         lualatex main.tex
+
+\DocumentMetadata{
+  lang=en-US,
+  pdfversion=1.7,
+  pdfstandard=ua-1,
+  testphase={phase-III}
+}
+
+\documentclass[12pt,letterpaper]{article}
+
+% Layout and spacing
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\doublespacing%
+\usepackage{microtype} % Improves typography
+\usepackage{url}
+\urlstyle{same}
+
+% Allow slightly looser line breaking to avoid overfull boxes
+\tolerance=1000
+\emergencystretch=2em
+
+% Font and encoding
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+% Header (APA-style)
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{<SHORT TITLE>}  % No "RUNNING HEAD:" for student papers
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt} % Remove header line per APA
+
+% Section formatting (APA: no numbering)
+\setcounter{secnumdepth}{0}
+
+% Language and citation setup
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=apa,backend=biber,sortcites=true,sorting=nyt]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{references.bib}
+
+% Accessibility and metadata
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={<Title>},
+  pdfauthor={Lanie Molinar},
+  pdfsubject={<Course or Assignment>},
+  pdfkeywords={APA, Accessibility, Template, <Keywords>},
+  pdflang={en-US},
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  bookmarksnumbered=true,
+  pdfstartview=FitH
+}
+
+% Optional: Silence biblatex footnote warning
+\usepackage{silence}
+\WarningFilter{biblatex}{Patching footnotes failed}
+
+% APA title page customization
+\usepackage{titling}
+\pretitle{\begin{center}\large\bfseries}
+\posttitle{\end{center}}
+
+\title{<Title>}
+\author{Lanie Molinar\\<Institution>}
+\date{<Due Date>}
+
+\begin{document}
+
+% Title page
+\begin{titlepage}
+\maketitle
+\thispagestyle{fancy}
+
+\begin{center}
+<Course Name>\\
+Instructor: <Professor Name>
+\end{center}
+\end{titlepage}
+
+% Main content starts on page 2
+\section{<Section Title>}
+
+Here is a citation to a sample source \parencite{smith2020}.
+
+You can also cite inline like \textcite{smith2020} or with multiple sources \parencite{smith2020,doe2021}.
+
+\newpage
+
+\printbibliography[heading=bibintoc]
+
+\end{document}

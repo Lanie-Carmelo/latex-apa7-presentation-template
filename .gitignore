@@ -1,0 +1,71 @@
+# LaTeX intermediate and output files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+
+# PDF output
+*.pdf
+
+# Editor/IDE files
+*.swp
+*.bak
+*.tmp
+*.backup
+*~
+*.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# macOS metadata
+.DS_Store
+
+# Windows Zone.Identifier files
+*:Zone.Identifier
+
+# Additional LaTeX files
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+*.glg
+*.ist
+*.acn
+*.acr
+*.alg
+*.xdv
+*.run.xml
+*.bcf
+
+# Bibliography files (if auto-generated)
+*-blx.bib
+*-SAVE-ERROR
+
+# Glossaries
+*.glsdefs
+
+# Build directories (if you use them)
+build/
+out/
+dist/
+
+# LaTeX distribution specific
+*.synctex(busy)
+*.pdfsync
+
+# Pandoc HTML artifacts
+*-luamml-mathml.html

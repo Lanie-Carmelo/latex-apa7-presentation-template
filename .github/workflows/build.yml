@@ -1,0 +1,114 @@
+name: Build LaTeX Document
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+      - '.gitignore'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  pdf:
+    name: Build PDF
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Accept MS Core Fonts EULA
+        run: |
+          echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+
+      - name: Cache apt packages
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: texlive-luatex texlive-bibtex-extra biber texlive-fonts-extra texlive-latex-extra chktex fontconfig ttf-mscorefonts-installer
+          version: 1.2
+
+      - name: Workaround libpaper1 bug
+        run: |
+          sudo apt-get update
+          sudo apt-get install --reinstall libpaper1 || true
+          sudo dpkg --configure -a || true
+
+      - name: Install LaTeX and tooling
+        run: |
+          sudo apt-get install -y texlive-luatex texlive-bibtex-extra biber texlive-fonts-extra texlive-latex-extra chktex fontconfig ttf-mscorefonts-installer
+
+      - name: Rebuild font cache
+        run: |
+          sudo fc-cache -f -v
+          fc-list | grep -i "times new roman" || echo "Warning: Times New Roman not found"
+
+      - name: Cache LaTeX aux files
+        uses: actions/cache@v4
+        with:
+          path: |
+            *.aux
+            *.bbl
+            *.bcf
+          key: latex-${{ hashFiles('main.tex', 'references.bib') }}
+
+      - name: Run lint check
+        run: make lint
+        continue-on-error: true
+
+      - name: Build PDF
+        run: make pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-pdf
+          path: output/main.pdf
+          retention-days: 30
+
+  html:
+    name: Build HTML
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Install tooling for HTML (pandoc)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc fontconfig
+
+      - name: Build HTML
+        run: make html
+
+      - name: Upload HTML artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-html
+          path: output/main.html
+          retention-days: 30
+
+  docx:
+    name: Build DOCX
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Install tooling for DOCX (pandoc)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc fontconfig
+
+      - name: Build DOCX
+        run: make docx
+
+      - name: Upload DOCX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-docx
+          path: output/main.docx
+          retention-days: 30
