@@ -37,6 +37,10 @@ This template is designed for students, researchers, and accessibility advocates
 
 This template was built with screen readers like NVDA and JAWS using Microsoft Visual Studio Code with accessible editing practices.
 
+### Note on Typography and Screen Readers
+
+This template uses en dashes (–) for numeric ranges (e.g., pages 10–15, years 2020–2025) to comply with APA 7th edition style requirements. **Important for screen reader users:** Screen readers (NVDA, JAWS, VoiceOver) announce en dashes as "en dash" and em dashes (—) as "em dash"—they do not interpret them as semantic pauses or words like "through" or "to." The use of en dashes in this template is purely for APA style compliance and visual typography, not for accessibility benefits.
+
 ## Getting Started
 
 1. **Install LaTeX** (TeX Live, MikTeX, etc.), Biber, and optionally Pandoc

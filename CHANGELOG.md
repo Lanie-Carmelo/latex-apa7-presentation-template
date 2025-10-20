@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Added clarification in README.md and PRESENTATION-README.md about how screen readers announce en dashes and em dashes (as "en dash"/"em dash", not as semantic interpretations like "through")
+- Explained that en dash usage is for APA 7 compliance and typography, not accessibility enhancement
+
 ## [1.0.2] - 2025-10-20
 
 ### Fixed

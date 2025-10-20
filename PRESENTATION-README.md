@@ -102,6 +102,10 @@ This ensures PDF/UA compliance for screen reader navigation.
 - No color-only cues (e.g., "the red line" without also saying "the solid line")
 - All information conveyed through text or semantic structure
 
+### 6. Typography Note for Screen Reader Users
+
+This template uses en dashes (–) for numeric ranges (e.g., 3–4 minutes, 20–40 words) to comply with APA 7th edition style requirements. Screen readers (NVDA, JAWS, VoiceOver) announce en dashes as "en dash" and em dashes (—) as "em dash"—they do not interpret them as semantic pauses or convert them to words like "through" or "to." The use of en dashes is for APA style compliance and professional typography, not for accessibility enhancement.
+
 ## Build Options
 
 ### Standard Presentation
