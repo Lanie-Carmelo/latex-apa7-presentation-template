@@ -60,7 +60,7 @@ Use the `\note{}` command to add accessible presenter notes:
 ```latex
 \begin{frame}{Slide Title}
   Slide content here.
-  
+
   \note{
     Speaking notes for this slide.
     Include timing, key points, and reminders.
@@ -231,7 +231,7 @@ Options: `right`, `left`, `top`, `bottom`
 ```latex
 \begin{frame}{Descriptive Title}
   \framesubtitle{Optional Clarifying Subtitle}
-  
+
   \begin{itemize}
     \item First main point
     \pause
@@ -239,7 +239,7 @@ Options: `right`, `left`, `top`, `bottom`
     \pause
     \item Third main point
   \end{itemize}
-  
+
   \note{
     Explain each point in detail.
     Add examples or anecdotes.
@@ -322,7 +322,7 @@ pac3 output/presentation.pdf
         \item Advantage 2
       \end{itemize}
     \end{column}
-    
+
     \begin{column}{0.5\textwidth}
       \textbf{Option B}
       \begin{itemize}
@@ -341,11 +341,11 @@ pac3 output/presentation.pdf
   \begin{block}{Important Definition}
     A clear, concise definition goes here.
   \end{block}
-  
+
   \begin{alertblock}{Warning}
     Critical information that needs attention.
   \end{alertblock}
-  
+
   \begin{exampleblock}{Example}
     A concrete example demonstrating the concept.
   \end{exampleblock}

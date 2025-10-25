@@ -1,4 +1,5 @@
-# Contributing to APA 7 Student Paper LaTeX Template
+
+# Contributing to APA 7 Beamer Presentation Template
 
 Thank you for considering contributing to this project! Your help is welcome, whether it’s fixing bugs, improving documentation, or suggesting new features.
 
@@ -12,7 +13,7 @@ Thank you for considering contributing to this project! Your help is welcome, wh
 ## Guidelines
 
 - Keep the template clean and easy to use for students.
-- Follow the APA 7th edition guidelines.
+- Follow the APA 7th edition guidelines for presentations.
 - Write clear commit messages (e.g., "Add example for figure citations").
 - If you add new files (e.g., examples), keep them minimal and relevant.
 - Test your changes with `make pdf` before submitting.
@@ -33,7 +34,7 @@ When reporting bugs or issues:
 Feature suggestions are welcome! Please:
 - Explain the use case
 - Describe how it would help students
-- Check if it aligns with APA 7 guidelines
+- Check if it aligns with APA 7 guidelines for presentations
 
 ## Need Help?
 

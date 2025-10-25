@@ -124,10 +124,6 @@ lint:
 		grep -Ei "undefined|citation|reference" $(OUTPUT_DIR)/$(MAIN).log || true; \
 	fi
 
-# Submissions target (paper)
-submissions: pdf | submissions-dir
-	cp $(OUTPUT_DIR)/$(MAIN).pdf $(SUBMISSIONS_DIR)/$(MAIN)-$(shell date +%Y%m%d-%H%M).pdf
-	@echo "✅ Submission saved to $(SUBMISSIONS_DIR)/$(MAIN)-$(shell date +%Y%m%d-%H%M).pdf"
 
 # Submissions target (presentation)
 submissions-presentation: presentation | submissions-dir

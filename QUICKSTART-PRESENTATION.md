@@ -84,7 +84,7 @@ Every slide has a `\note{}` command:
 ```latex
 \begin{frame}{Slide Title}
   Slide content...
-  
+
   \note{
     What to say about this slide.
     Timing estimates.
@@ -152,15 +152,15 @@ Uses the same `references.bib` file!
   \begin{block}{Central Question}
     What is the main problem being addressed?
   \end{block}
-  
+
   \pause
-  
+
   \begin{itemize}
     \item Why this question matters
     \item Current gaps in knowledge
     \item Expected contributions
   \end{itemize}
-  
+
   \note{
     Start by clearly stating the research question.
     Explain why it's significant - connect to real-world issues.

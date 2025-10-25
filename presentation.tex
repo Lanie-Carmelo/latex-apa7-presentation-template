@@ -1,6 +1,6 @@
 % Accessible APA 7 Beamer Presentation Template
 % Author: Lanie Molinar Carmelo
-% Template Version: 1.0.4 (2025-10-20)
+% Template Version: 1.2.1 (2025-10-25)
 % License: MIT License - https://opensource.org/licenses/MIT
 %
 % ACCESSIBILITY NOTES:
@@ -90,7 +90,7 @@
 
 % ===== NOTES AND HANDOUT CONFIGURATION =====
 % Conditional compilation for different output modes
-\ifdefined\handoutmode
+\ifdefined\handoutmode%
   % Handout mode: 4 slides per page, no overlays
   \PassOptionsToClass{handout}{beamer}
   \AtBeginDocument{%
@@ -99,7 +99,7 @@
   }
 \fi
 
-\ifdefined\withnotes
+\ifdefined\withnotes%
   % Notes mode: show notes below slides
   \setbeameroption{show notes}
 \else
@@ -119,7 +119,7 @@
 
 % ===== TITLE FRAME =====
 \begin{frame}
-  \titlepage
+  	itlepage
   \note{
     Welcome message and opening remarks.
     Introduce yourself and the topic.
@@ -142,35 +142,35 @@
 
 \begin{frame}{Introduction to the Topic}
   \framesubtitle{Setting the Context}
-  
+
   \begin{itemize}
     \item First key point about the topic
     \item Second important concept
     \item Third foundational idea
   \end{itemize}
-  
+
   \note{
     Explain the background and motivation for this topic.
     Connect to audience's existing knowledge.
     Mention why this matters.
-    Duration: 2-3 minutes.
+  Duration: 2--3 minutes.
   }
 \end{frame}
 
 \begin{frame}{Research Question}
-  
+
   \begin{block}{Central Question}
     What is the main research question or problem being addressed?
   \end{block}
-  
-  \pause
-  
+
+  \pause%
+
   \begin{itemize}
     \item Why this question matters
     \item Current gaps in knowledge
     \item Expected contributions
   \end{itemize}
-  
+
   \note{
     State the research question clearly.
     Explain its significance.
@@ -184,19 +184,20 @@
 
 \begin{frame}{Previous Research}
   \framesubtitle{Key Studies in the Field}
-  
+
   \begin{itemize}
     \item \textcite{smith2020} found that faith and reason are complementary
     \item \textcite{mounce2021} argues for biblical reliability
     \item \textcite{doe2021} examines theological perspectives
   \end{itemize}
-  
-  \pause
-  
+
+  \pause%
+
   \begin{block}{Research Gap}
-    Despite these contributions, there remains a need for...
+  Despite these contributions, there remains a need for\ldots
+    Despite these contributions, there remains a need for\ldots
   \end{block}
-  
+
   \note{
     Summarize relevant literature.
     Highlight key findings and debates.
@@ -210,18 +211,18 @@
 
 \begin{frame}{Research Approach}
   \framesubtitle{Methods and Design}
-  
+
   \begin{enumerate}
     \item Data collection methods
     \item Analysis procedures
     \item Validation strategies
   \end{enumerate}
-  
+
   \note{
     Explain your methodological approach.
     Justify your choices.
     Mention any limitations or challenges.
-    Duration: 2-3 minutes.
+  Duration: 2--3 minutes.
   }
 \end{frame}
 
@@ -229,7 +230,7 @@
 \section{Findings}
 
 \begin{frame}{Key Results}
-  
+
   \begin{columns}[t]
     \begin{column}{0.5\textwidth}
       \textbf{Finding 1}
@@ -238,7 +239,7 @@
         \item Detail B
       \end{itemize}
     \end{column}
-    
+
     \begin{column}{0.5\textwidth}
       \textbf{Finding 2}
       \begin{itemize}
@@ -247,32 +248,32 @@
       \end{itemize}
     \end{column}
   \end{columns}
-  
+
   \note{
     Present main findings.
     Use clear, accessible language.
     Connect results to research question.
-    Duration: 3-4 minutes.
+  Duration: 3--4 minutes.
   }
 \end{frame}
 
 \begin{frame}{Interpretation}
-  
+
   \begin{block}{What This Means}
     Interpretation of the findings in context of existing literature
   \end{block}
-  
+
   \begin{itemize}
     \item Theoretical implications
     \item Practical applications
     \item Unexpected outcomes
   \end{itemize}
-  
+
   \note{
     Analyze and interpret results.
     Connect to broader themes.
     Acknowledge limitations.
-    Duration: 2-3 minutes.
+  Duration: 2--3 minutes.
   }
 \end{frame}
 
@@ -280,22 +281,22 @@
 \section{Conclusion}
 
 \begin{frame}{Summary}
-  
+
   \textbf{Main Takeaways:}
   \begin{enumerate}
     \item First key conclusion
     \item Second important finding
     \item Third significant insight
   \end{enumerate}
-  
+
   \vspace{1em}
-  
+
   \textbf{Future Directions:}
   \begin{itemize}
     \item Next steps for research
     \item Unanswered questions
   \end{itemize}
-  
+
   \note{
     Summarize main points.
     Emphasize contributions.
@@ -315,16 +316,16 @@
 
 % ===== QUESTIONS =====
 \begin{frame}{Questions?}
-  
+
   \begin{center}
     \Large Thank you for your attention!
-    
+
     \vspace{2em}
-    
+
     \normalsize
     Contact: your.email@ccu.edu
   \end{center}
-  
+
   \note{
     Be ready to answer questions.
     Have backup slides prepared if needed.
@@ -338,13 +339,13 @@
 \section{Appendix}
 
 \begin{frame}[noframenumbering]{Additional Details}
-  
+
   \begin{itemize}
     \item Supplementary information
     \item Detailed methodology notes
     \item Extended data or analysis
   \end{itemize}
-  
+
   \note{
     Use these slides only if questions arise.
     Have specific examples ready.
