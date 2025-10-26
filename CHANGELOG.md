@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Fixed
+- Commented out `\DocumentMetadata` block in `presentation.tex` to resolve build errors with LuaLaTeX. Document now builds successfully. (Accessibility and PDF/UA tagging remain available for future use.)
 
 ## [1.2.1] - 2025-10-25
 
