@@ -51,20 +51,20 @@ jobs:
             *.aux
             *.bbl
             *.bcf
-          key: latex-${{ hashFiles('main.tex', 'references.bib') }}
+          key: latex-${{ hashFiles('presentation.tex', 'references.bib') }}
 
       - name: Run lint check
         run: make lint
         continue-on-error: true
 
-      - name: Build PDF
-        run: make pdf
+      - name: Build Presentation
+        run: make presentation
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: output-pdf
-          path: output/main.pdf
+          path: output/presentation.pdf
           retention-days: 30
 
   html:
@@ -87,7 +87,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: output-html
-          path: output/main.html
+          path: output/presentation.html
           retention-days: 30
 
   docx:
@@ -110,5 +110,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: output-docx
-          path: output/main.docx
+          path: output/presentation.docx
           retention-days: 30

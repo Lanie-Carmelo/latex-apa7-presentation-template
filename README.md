@@ -58,6 +58,7 @@ This template uses en dashes (–) for numeric ranges (e.g., pages 10–15, year
 The provided `Makefile` automates compilation of presentations.
 **Note:** This template uses `biblatex` with the `biber` backend (not BibTeX).
 
+
 ### Presentation Targets
 
 | Target                   | Description                                                                 |
@@ -67,30 +68,11 @@ The provided `Makefile` automates compilation of presentations.
 | `presentation-handout`   | Builds handout version (4 slides per page).                                 |
 | `view-presentation`      | Opens the presentation PDF in your default viewer.                          |
 | `submissions-presentation` | Copies presentation to `submissions/` folder with timestamp.              |
-
-### Paper Targets
-
-| Target        | Description                                                                 |
-|---------------|-----------------------------------------------------------------------------|
-| `pdf`         | Compiles the LaTeX document into a tagged, accessible PDF using LuaLaTeX.   |
-| `pdf-pandoc`  | Generates a PDF using Pandoc (alternative method).                          |
-| `html`        | Converts the LaTeX document to HTML using Pandoc with APA citation styling. |
-| `docx`        | Converts the LaTeX document to DOCX using Pandoc.                           |
-
-### Utility Targets
-
-| Target        | Description                                                                 |
-|---------------|-----------------------------------------------------------------------------|
-| `lint`        | Runs `chktex` and checks `.log` for missing citations or references.        |
-| `check`       | Displays metadata and integrity info for the compiled PDF.                  |
-| `view`        | Opens the paper PDF in your default Windows viewer (e.g., Acrobat).         |
-| `refresh`     | Reopens the PDF to simulate a manual refresh.                               |
-| `build`       | Runs `lint`, compiles the PDF, and opens it—ideal for final review.         |
-| `watch`       | Watches for changes to `.tex` or `.bib` and rebuilds automatically.         |
-| `submissions` | Copies the final paper PDF to a `submissions/` folder with a timestamp.     |
-| `status`      | Lists output file sizes and last modified times.                            |
-| `clean`       | Removes LaTeX build artifacts and the output directory.                     |
-| `distclean`   | Removes all generated files, including outputs and submissions.             |
+| `html`                   | Converts the presentation to HTML using Pandoc with APA citation styling.   |
+| `docx`                   | Converts the presentation to DOCX using Pandoc.                            |
+| `lint`                   | Runs `chktex` and checks `.log` for missing citations or references.        |
+| `clean`                  | Removes LaTeX build artifacts and the output directory.                     |
+| `distclean`              | Removes all generated files, including outputs and submissions.             |
 
 To use a target, run:
 
@@ -101,24 +83,17 @@ make <target>
 Example:
 
 ```sh
-make build
+make presentation
+make html
+make docx
 ```
 
 All outputs are placed in the `output/` directory. Archived PDFs are stored in `submissions/`.
 
 ### Manual Build Steps
 
-If you are not using the Makefile, compile your documents with:
+If you are not using the Makefile, compile your presentation with:
 
-**For papers (main.tex):**
-```sh
-lualatex main.tex
-biber main
-lualatex main.tex
-lualatex main.tex
-```
-
-**For presentations (presentation.tex):**
 ```sh
 lualatex presentation.tex
 biber presentation
@@ -128,11 +103,12 @@ lualatex presentation.tex
 
 **Do not use `bibtex`—this template requires `biber` for bibliography processing.**
 
+
 ## Overleaf Compatibility
 
 This template works with Overleaf:
 
-- Upload all files (`main.tex`, `references.bib`, etc.) to your Overleaf project.
+- Upload all files (`presentation.tex`, `references.bib`, etc.) to your Overleaf project.
 - In Overleaf, set the bibliography backend to **biber** (Menu → Settings → Compiler → Biber).
 - Overleaf automatically runs the correct sequence (`lualatex → biber → lualatex → lualatex`).
 - You can manage your bibliography in `references.bib` as usual.
@@ -152,9 +128,10 @@ You can use Zotero to manage your references and export them to BibLaTeX format:
 - Right-click your collection → Export Collection → Enable "Keep Updated"
 - Zotero will automatically update `references.bib` when you add/modify entries
 
+
 ## Customization
 
-- Update the document metadata in `main.tex` (`\title`, `\author`, etc.).
+- Update the document metadata in `presentation.tex` (`\title`, `\author`, etc.).
 - Use the `biblatex` options and APA formatting as needed.
 - Modify the Makefile to suit your workflow or add new targets.
 
@@ -189,43 +166,47 @@ MIT License.
 - ✅ **Overleaf Compatible**: Works seamlessly with Overleaf
 - ✅ **LuaLaTeX**: Full Unicode and modern font support
 
+
 ## File Structure
 
 ```
-├── main.tex              # Main LaTeX document
-├── references.bib        # Bibliography database
-├── apa.csl              # APA 7 citation style for Pandoc
-├── Makefile             # Build automation
-├── add-refs-heading.lua # Pandoc filter for references heading
-├── .gitignore           # Git ignore patterns
-├── README.md            # This file
-├── CONTRIBUTING.md      # Contribution guidelines
-├── CHANGELOG.md         # Version history and release notes
-└── LICENSE              # MIT License
+├── presentation.tex         # Main LaTeX presentation document
+├── presentation-notes.tex   # Presentation with notes below slides
+├── presentation-handout.tex # Handout version (4 slides per page)
+├── references.bib           # Bibliography database
+├── apa.csl                  # APA 7 citation style for Pandoc
+├── Makefile                 # Build automation
+├── add-refs-heading.lua     # Pandoc filter for references heading
+├── .gitignore               # Git ignore patterns
+├── README.md                # This file
+├── CONTRIBUTING.md          # Contribution guidelines
+├── CHANGELOG.md             # Version history and release notes
+└── LICENSE                  # MIT License
 ```
 
 ## Citation and Attribution
 
 If you use this template for your academic work, consider acknowledging it:
 
-**Option 1: In your paper's acknowledgments (informal):**
-> This paper was formatted using the APA 7 Student Paper LaTeX Template (v1.2.0) by Lanie Molinar Carmelo, available at https://github.com/Lanie-Carmelo/APA-7-Student-Paper-Template
+
+**Option 1: In your presentation's acknowledgments (informal):**
+> This presentation was formatted using the APA 7 Beamer Presentation LaTeX Template (v1.2.1) by Lanie Molinar Carmelo, available at https://github.com/Lanie-Carmelo/latex-apa7-presentation-template
 
 **Option 2: In technical documentation or derivative works:**
 ```bibtex
-@misc{carmelo2025apa7template,
+@misc{carmelo2025apa7presentation,
   author = {Carmelo, Lanie Molinar},
-  title = {APA 7 Student Paper LaTeX Template},
+  title = {APA 7 Beamer Presentation LaTeX Template},
   year = {2025},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/Lanie-Carmelo/APA-7-Student-Paper-Template}},
-  note = {Version 1.2.0}
+  howpublished = {\url{https://github.com/Lanie-Carmelo/latex-apa7-presentation-template}},
+  note = {Version 1.2.1}
 }
 ```
 
 **Option 3: For derivative templates:**
-- Keep the version header in `main.tex` intact
+- Keep the version header in `presentation.tex` intact
 - Document your changes in your own CHANGELOG
 - Link back to this repository in your README
 - Consider contributing improvements back via pull request
