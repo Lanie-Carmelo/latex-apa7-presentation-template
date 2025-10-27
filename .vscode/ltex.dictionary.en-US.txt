@@ -20,3 +20,5 @@ CTAN
 Tantau
 biblatex-apa
 Kime
+LTeX
+cSpell

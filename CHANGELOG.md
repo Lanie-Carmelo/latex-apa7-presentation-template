@@ -5,11 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2025-10-27
 
+### Removed
+- PDF/UA tagging and all related metadata have been removed from `presentation.tex` and documentation. This resolves persistent build errors and improves compatibility. Semantic accessibility features (structure, notes) remain.
 
-## [Unreleased]
-### Fixed
-- Commented out `\DocumentMetadata` block in `presentation.tex` to resolve build errors with LuaLaTeX. Document now builds successfully. (Accessibility and PDF/UA tagging remain available for future use.)
+### Changed
+- Documentation and citation files updated to reflect removal of PDF/UA tagging and new version number.
 
 ## [1.2.1] - 2025-10-25
 
@@ -92,7 +94,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Presentation template maintains same accessibility standards as paper template
 - Both templates can coexist in same repository with shared bibliography
 
-[Unreleased]: https://github.com/Lanie-Carmelo/latex-apa7-presentation-template/compare/v1.0.4...HEAD
+[Unreleased]: https://github.com/Lanie-Carmelo/latex-apa7-presentation-template/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/Lanie-Carmelo/latex-apa7-presentation-template/releases/tag/v1.3.0
+[1.2.1]: https://github.com/Lanie-Carmelo/latex-apa7-presentation-template/releases/tag/v1.2.1
 [1.0.4]: https://github.com/Lanie-Carmelo/latex-apa7-presentation-template/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/Lanie-Carmelo/latex-apa7-presentation-template/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/Lanie-Carmelo/latex-apa7-presentation-template/compare/v1.0.1...v1.0.2
