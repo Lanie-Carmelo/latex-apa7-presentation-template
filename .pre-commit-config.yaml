@@ -1,17 +1,14 @@
 repos:
-  # Check for large files and merge conflicts
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v6.0.0
     hooks:
       - id: check-added-large-files
-        args: ['--maxkb=1000']
       - id: check-merge-conflict
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-yaml
       - id: check-case-conflict
 
-  # LaTeX linting
   - repo: local
     hooks:
       - id: chktex

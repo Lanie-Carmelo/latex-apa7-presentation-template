@@ -28,7 +28,7 @@ This template is designed for students, researchers, and accessibility advocates
 - Work locally or in Overleaf
 
 ## Accessibility Tools Used
-This template was built with screen readers like NVDA and JAWS using Microsoft Visual Studio Code with accessible editing practices.
+This template was built with screen readers like NVDA and JAWS using Microsoft Visual Studio Code.
 
 ### Note on Typography and Screen Readers
 This template uses en dashes (–) for numeric ranges (e.g., pages 10–15, years 2020–2025) to comply with APA 7th edition style requirements. Important for screen reader users: Screen readers (NVDA, JAWS, VoiceOver) announce en dashes as "en dash" and em dashes (—) as "em dash"—not as semantic words like "through" or meaningful pauses. En dashes are used here for APA compliance and professional typography, not for accessibility benefits.
@@ -147,8 +147,10 @@ MIT License.
 
 ## Citation and Attribution
 If you use this template for your academic work, consider acknowledging it:
+
 **Option 1: In your presentation's acknowledgments (informal):**
-> This presentation was formatted using the APA 7 Beamer Presentation LaTeX Template (v1.3.0) by Lanie Molinar Carmelo, available at https://github.com/Lanie-Carmelo/latex-apa7-presentation-template
+> This presentation was formatted using the APA 7 Beamer Presentation LaTeX Template (v1.4.0) by Lanie Molinar Carmelo, available at https://github.com/Lanie-Carmelo/latex-apa7-presentation-template
+
 **Option 2: In technical documentation or derivative works:**
 ```bibtex
 @misc{carmelo2025apa7presentation,
@@ -158,14 +160,16 @@ If you use this template for your academic work, consider acknowledging it:
   publisher = {GitHub},
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/Lanie-Carmelo/latex-apa7-presentation-template}},
-  note = {Version 1.3.0}
+  note = {Version 1.4.0}
 }
 ```
+
 **Option 3: For derivative templates:**
 - Keep the version header in `presentation.tex` intact
 - Document your changes in your own CHANGELOG
 - Link back to this repository in your README
 - Consider contributing improvements back via pull request
+
 ### Why Attribution Matters
 - Helps other students discover accessible LaTeX tools
 - Supports ongoing development and maintenance

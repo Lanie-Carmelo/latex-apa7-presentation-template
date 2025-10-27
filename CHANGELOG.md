@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2025-10-27
+
+### Changed
+- Synced configuration, documentation, and accessibility improvements from APA 7 Student Paper Template
+- Updated README.md for improved accessibility, citation, and attribution sections
+- Updated .cspell.json, .editorconfig, .gitignore, .pre-commit-config.yaml, add-refs-heading.lua, apa.csl for consistency
+- Bumped version references in documentation to 1.4.0
+
+### Removed
+- Removed unused add-refs-heading.lua Pandoc filter (no longer referenced in build or documentation)
+
 ## [1.3.0] - 2025-10-27
 
 ### Removed
