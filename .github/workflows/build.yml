@@ -61,7 +61,7 @@ jobs:
         run: make presentation
 
       - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: output-pdf
           path: output/presentation.pdf
@@ -84,7 +84,7 @@ jobs:
         run: make html
 
       - name: Upload HTML artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: output-html
           path: output/presentation.html
@@ -107,7 +107,7 @@ jobs:
         run: make docx
 
       - name: Upload DOCX artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: output-docx
           path: output/presentation.docx
